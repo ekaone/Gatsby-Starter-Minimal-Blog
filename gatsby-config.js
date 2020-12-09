@@ -1,12 +1,12 @@
 require(`dotenv`).config({
-  path: `.env`,
-})
+  path: `.env`
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitleAlt: `Minimal Blog - Gatsby Theme`
   },
   plugins: [
     {
@@ -16,30 +16,34 @@ module.exports = {
         navigation: [
           {
             title: `Blog`,
-            slug: `/blog`,
+            slug: `/blog`
           },
           {
             title: `About`,
-            slug: `/about`,
+            slug: `/about`
           },
+          {
+            title: `Pranala`,
+            slug: `/pranala`
+          }
         ],
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/lekoarts_de`
           },
           {
             name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
-          },
-        ],
-      },
+            url: `https://www.instagram.com/lekoarts.de/`
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
+        trackingId: process.env.GOOGLE_ANALYTICS_ID
+      }
     },
     `gatsby-plugin-sitemap`,
     {
@@ -56,15 +60,15 @@ module.exports = {
           {
             src: `/android-chrome-192x192.png`,
             sizes: `192x192`,
-            type: `image/png`,
+            type: `image/png`
           },
           {
             src: `/android-chrome-512x512.png`,
             sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
-      },
+            type: `image/png`
+          }
+        ]
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
@@ -73,8 +77,8 @@ module.exports = {
       options: {
         analyzerMode: `static`,
         reportFilename: `_bundle.html`,
-        openAnalyzer: false,
-      },
-    },
-  ].filter(Boolean),
-}
+        openAnalyzer: false
+      }
+    }
+  ].filter(Boolean)
+};
